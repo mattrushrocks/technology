@@ -23,20 +23,12 @@
 </head>
 
   <body>
-    <div id="headerWrapper">
-      <header>
-        <a href="index.html"
-          ><img
-            src="images/logo-1x.png"
-            alt="logo"
-            width="75"
-            height="73"
-            srcset="
-              images/logo-1x.png 1x,
-              images/logo-2x.png 2x,
-              images/logo-3x.png 3x
-            "
-        /></a>
+  <div id="headerWrapper">
+    <header>
+        <figure class="logo">
+            <img src="images/logo-1x.png" alt="header-logo" width="45" height="50"
+            srcset="images/logo-1x.png 1x, images/logo-2x.png 2x, images/logo-3x.png 3x">
+        </figure>
         <div>
           <span>TechTalk Week </span>
           <p>Learn Together</p>
@@ -65,9 +57,9 @@
       <main>
         <h1>Best Practices</h1>
         <div class="hero">
-          <video width="800" height="300" autoplay inline loop muted>
-            <source src="media/hero-video.webm" type="video/webm" />
-            <source src="media/hero-video.mp4" type="video/mp4" />
+          <video width="800" height="300" autoplay playsinline loop muted>
+            <source src="media/hero-video.webm" type="video/webm"/>
+            <source src="media/hero-video.mp4" type="video/mp4"/>
           </video>
           <div>
             <h3>TechTalk Week</h3>
