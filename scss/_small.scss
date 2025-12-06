@@ -1,0 +1,271 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*  Apply a natural box layout model to all elements  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} // end all elements
+
+
+/* --------------------------- BODY --------------------------- */
+body {
+    font-family: $defaultFont;
+    font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {border-bottom: 1px solid $greyColor;}
+header {
+    display: grid;
+    grid-template-columns: 75px auto 60px;
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: .5rem $gutter;
+    div{
+        p{
+            margin-top: .5rem;
+            color: $secondaryColor;
+        }
+    }
+    span {
+        font-size: 1.6rem;
+        font-weight: $lightWeight;
+        color: $primaryColor;
+    }
+} // end header
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+#hamburger{
+    position: relative;
+    height: 44px;
+    width: 44px;
+    cursor: pointer;
+    border-radius: 10px;
+    .top, .bottom {
+        position: absolute;
+        background-color: $primaryColor;
+        height: 2px;
+        width: 50%;
+        left: 25%;
+        transition: all .3s ease;
+    }
+    .top{
+        top: 33%;
+    }
+    .bottom{
+        top: 67%;
+    }
+}
+#hamburger.open{
+    .top{transform: rotate(45deg);}
+    .bottom{transform: rotate(-45deg);}
+    .top, .bottom{
+        top: 48%;
+        width: 60%;
+        left: 20%;
+    }
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    li a{
+        color: $primaryColor;
+        display: block;
+        padding: .75rem $gutter;
+        text-decoration: none;
+        border-bottom: #ccc 1px solid;
+    }
+    li.active a{
+        text-decoration: underline 2px;
+        text-decoration-color: $secondaryColor;
+    }
+}
+nav ul.open{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------------- MAIN --------------------------- */
+main {
+    h1 {
+        padding: 1rem $gutter.5rem $gutter;
+        font-size: 1.5rem;
+        color: $secondaryColor;
+        font-weight: $lightWeight
+    }
+    p {
+        padding: .5rem $gutter;
+        color: #333;
+        line-height: $leading;
+    }
+}// end main
+.hero{
+    position: relative;
+    div{
+        position: absolute;
+        bottom: 2%;
+        color: white;
+        left: 0px;
+        right: 0px;
+        background: linear-gradient(90deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.20) 39%);
+        padding: 10px;
+        p{color: white;
+            padding: 0;
+            margin-bottom: 0px;
+
+        }
+    }
+    video{
+    width: 100%;
+    height: auto;
+}
+}
+:root { --time: 0.707s; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  perspective: 40rem;
+}
+
+.card-body {
+  display: flex;
+  transform-style: preserve-3d;
+  transition: var(--time) transform;
+
+  .card:hover &, .card:focus & {
+    transform: rotateX(-180deg);
+  }
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  min-width: 100%;
+}
+
+.card-back {
+  transform: rotateX(-180deg) translate(-100%, 0);
+}
+
+/* Make it Pretty */
+
+body {
+  line-height: 1.3;
+  font-family: sans-serif;
+}
+
+.cards {
+  grid-gap: 1.5rem;
+  grid-auto-rows: 1fr;
+  padding: $gutter;
+  background: whitesmoke;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+.card {
+    transition: z-index;
+    transition-delay: var(--time);
+    z-index: 0;
+    
+    &:hover {
+      transition-delay: 0s;
+      z-index: 1;
+    }
+  }
+  .card-front, .card-back {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 5px 10px black;
+    border-radius: 0.25rem;
+    padding: .25rem;
+  }
+    
+.card {
+  display: flex;
+  transition: z-index, transform calc(var(--time) / 4);
+  transition-delay: var(--time), 0s;
+  text-decoration: none;
+  color: inherit;
+  z-index: 0;
+  
+  &:hover {
+    transition-delay: 0s;
+    z-index: 1;
+  }
+
+  &:active {
+    transform: scale(0.975);
+  }
+}
+
+.card-body {
+  border-radius: 0.25rem;
+  flex: 1;
+  display: flex;
+  img{
+    width: 10px;
+    height: auto
+
+  }
+}
+
+.card-front, .card-back {
+  @extend .shadow;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-sizing: border-box;
+  padding: .5rem;
+  border-radius: 0.25rem;
+}
+
+.card-front {
+  font-size: 1.5rem;
+  img{
+    width: 90%;
+    height: auto;
+  }
+}
+
+.shadow {
+  box-shadow: 0 -1px 1px rgba(0,0,0,0.04), 
+              0 2px 2px rgba(0,0,0,0.04), 
+              0 4px 4px rgba(0,0,0,0.04), 
+              0 8px 8px rgba(0,0,0,0.04),
+              0 16px 16px rgba(0,0,0,0.04); 
+}
+
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+    background-color: $primaryColor
+} // end footer wrapper
+
+footer {
+    font-size: .85rem;
+    padding: 1rem $gutter;
+    color: white;
+    text-align: center;
+    line-height: $leading;
+    a {color: $greyColor;}
+}// end footer
