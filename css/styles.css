@@ -318,56 +318,56 @@ body {
   min-width: 320px;
   line-height: 1.3;
   background-color: #f9f9fb; /* very light background */
-  color: #2a2a2a;
+  color: #1a1a1a; /* darker text for contrast */
 }
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid #d0cce7; /* soft purple border */
+  border-bottom: 1px solid #7a5fa0; /* darker purple border */
 }
 
 header div p {
   margin-top: 0.5rem;
-  color: #6ec6ff; /* light tech blue */
+  color: #1e88e5; /* stronger tech blue */
 }
 header span {
   font-size: 1.6rem;
   font-weight: 300;
-  color: #c77dff; /* light purple accent */
+  color: #8e24aa; /* darker purple accent */
 }
 
 /* --------------------------- NAVIGATION --------------------------- */
 #hamburger .top, #hamburger .bottom {
-  background-color: #c77dff; /* purple lines */
+  background-color: #8e24aa; /* darker purple lines */
 }
 
 nav ul li a {
-  color: #6ec6ff; /* blue links */
+  color: #1e88e5; /* darker blue links */
   display: block;
   padding: 0.75rem 10px;
   text-decoration: none;
-  border-bottom: #e0d7f7 1px solid;
+  border-bottom: #b39ddb 1px solid; /* muted purple border */
 }
 nav ul li.active a {
   text-decoration: underline 2px;
-  text-decoration-color: #ff99cc; /* pink underline */
+  text-decoration-color: #d81b60; /* darker pink underline */
 }
 
 /* --------------------------- MAIN --------------------------- */
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
   font-size: 1.5rem;
-  color: #c77dff; /* purple headings */
+  color: #8e24aa; /* darker purple headings */
   font-weight: 300;
 }
 main p {
   padding: 0.5rem 10px;
-  color: #333;
+  color: #2a2a2a;
   line-height: 150%;
 }
 
 .hero div {
-  background: linear-gradient(90deg, rgba(199,125,255,0.6) 0%, rgba(110,198,255,0.4) 39%);
+  background: linear-gradient(90deg, rgba(142,36,170,0.7) 0%, rgba(30,136,229,0.6) 39%);
   color: white;
 }
 
@@ -378,7 +378,7 @@ main p {
   flex-wrap: wrap;
   gap: 1.5rem;
   padding: 10px;
-  background: #f0f4ff; /* very light blue background */
+  background: #e3f2fd; /* light but darker blue background */
   justify-content: center;
 }
 
@@ -387,14 +387,14 @@ main p {
   background-color: #ffffff;
   border-radius: 0.5rem;
   padding: 0.75rem;
-  box-shadow: 0 4px 12px rgba(199,125,255,0.2),
-              0 2px 6px rgba(110,198,255,0.2),
-              0 1px 3px rgba(255,153,204,0.2);
+  box-shadow: 0 4px 12px rgba(142,36,170,0.3),
+              0 2px 6px rgba(30,136,229,0.3),
+              0 1px 3px rgba(216,27,96,0.3);
 }
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background: linear-gradient(90deg, #c77dff, #6ec6ff, #ff99cc); /* purple-blue-pink gradient */
+  background: linear-gradient(90deg, #8e24aa, #1e88e5, #d81b60); /* darker purple-blue-pink gradient */
 }
 footer {
   font-size: 0.85rem;
@@ -403,7 +403,7 @@ footer {
   text-align: center;
   line-height: 150%;
 }
-footer a { color: #e0d7f7; }
+footer a { color: #c5cae9; }
 
 /* --------------------------- MEDIA QUERIES --------------------------- */
 @media only screen and (min-width: 35rem) {
@@ -417,7 +417,7 @@ footer a { color: #e0d7f7; }
     transition: background 0.3s linear;
   }
   nav ul li a:hover {
-    background-color: #ffebf7; /* soft pink hover */
+    background-color: #f8bbd0; /* darker pink hover */
   }
 }
 @media only screen and (min-width: 64rem) {
