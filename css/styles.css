@@ -374,23 +374,27 @@ main p {
 /* --------------------------- CARDS --------------------------- */
 .cards {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 1.5rem;
   padding: 10px;
-  background: #e3f2fd; /* light but darker blue background */
+  background: #e3f2fd;
   justify-content: center;
 }
 
+/* Each card should be flexible */
 .card-front,
 .card-back {
-  background-color: #ffffff;
-  border-radius: 0.5rem;
-  padding: 0.75rem;
-  box-shadow: 0 4px 12px rgba(142,36,170,0.3),
-              0 2px 6px rgba(30,136,229,0.3),
-              0 1px 3px rgba(216,27,96,0.3);
+  flex: 1 1 280px; /* allows wrapping but keeps a minimum width */
+  max-width: 300px;
 }
+
+/* On desktop, allow row layout */
+@media only screen and (min-width: 64rem) {
+  .cards {
+    flex-direction: row;
+  }
+}
+
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
